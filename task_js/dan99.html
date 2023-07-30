@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="styles/reset.css" rel="stylesheet">
+        <title>구구단 2단</title>
+    <style>
+        h1 {
+            text-align: center;
+            padding:20px;
+            font-size: 10rem;
+            background: linear-gradient(90deg,rgb(233, 112, 112),rgba(234, 236, 120, 0.973),rgb(240, 153, 168),rgb(255, 105, 105));
+            -webkit-text-fill-color:transparent;
+            -webkit-background-clip: text;
+            background-size: 200%;
+            animation:txt 10s infinite linear;
+            font-weight: 900;            
+            margin: 100px;
+            text-shadow: 10px 10px 20px rgb(233, 112, 112);
+        }
+        @keyframes txt {
+            0% {background-position:0 0;}
+            100% {background-position:10000px 10000px;}
+        }
+        .gugu {
+            margin:0 auto;
+            width:500px; height:250px;
+            border-radius:20px;
+            background: rgb(255, 105, 105);
+            font-size: 5rem;
+            box-shadow: 5px 5px 5px rgb(160, 66, 66);
+            display: block;
+            margin-bottom: 100px;
+        }
+        .gugu:hover {
+            background: rgba(255, 105, 105, 0.863);
+            width:510px; height: 260px;
+            transition:all 1s;
+            transform-origin: center;
+        }
+        .go {
+            display: flex; flex-flow:row wrap;
+            align-items: center; justify-content:space-around;
+        }
+        .go .gogo {margin:0 auto;
+            width:500px; height:250px;
+            border-radius:20px;
+            background: rgb(253, 253, 161);
+            font-size: 5rem;
+            box-shadow: 5px 5px 5px rgb(180, 180, 97);
+            display: block;
+            margin-bottom: 50px;
+        }
+        .go .gogo:hover {
+            background: rgba(255, 255, 0, 0.692);
+            width:510px; height: 260px;
+            transition:all 1s;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>구구단 2단</h1>
+    <button class="gugu" type="button">2 * 1 = 2</button>
+    <div class="go">
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+        <button class="gogo" type="button"></button>
+    </div>
+    <script>
+        let dan2 =2;
+        let dan2_1 =0;
+        let mc=1;
+        const gugu= document.querySelectorAll('.gugu');
+        console.log(dan2,dan2_1,mc);
+        console.log(gugu, gugu[0], gugu[1], gugu[2], gugu[3], gugu[4], gugu[5], gugu[6], gugu[7], gugu[8]);
+        gugu[0].addEventListener('click',function(){
+            dan2_1=++mc; this.innerHTML=`${dan2} * ${dan2_1} = ${dan2*dan2_1}`,
+            this.style.bulr})
+    console.log('------------------------------------------------------')
+        let dan2_2 =1;
+        const gogo= document.querySelectorAll('.gogo');
+        console.log(dan2,dan2_1);
+        console.log(gogo, gogo[0], gogo[1], gogo[2], gogo[3], gogo[4], gogo[5], gogo[6], gogo[7], gogo[8]);
+        gogo[0].innerHTML=`${dan2}*${dan2_2}=${dan2*dan2_2}`   
+        gogo[1].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[2].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[3].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[4].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[5].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[6].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[7].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[8].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+        gogo[9].innerHTML=`${dan2}*${++dan2_2}=${dan2*dan2_2}`   
+    </script>
+</body>
+</html>
