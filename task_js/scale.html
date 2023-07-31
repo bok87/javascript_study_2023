@@ -5,14 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link href="styles/scale.css" rel="stylesheet">
-    <link href="/styles/reset.css" rel="stylesheet">
-    <title>구구단 2단</title>
+    <title>체중계</title>
 </head>
 <body>
-    <
-    <script>
-
-    </script>
+    <h1>다이어트 체중계</h1>
+    <p>당신의 건강 몸무게를 알아보세요!</p>
+    <ul>
+        <li>현재 키 : <input type="text" id="height"></li>
+        <li>현재 몸무게 : <input type="text" id="weight"></li>
+        <li>목표 몸무게 : <input type="text" id="normal" readonly></li>
+        <li>최종 감량 목표 : <input type="text" id="weight2" readonly></li>
+    </ul>
+    <p><button id="result" type="button">결과보기</button></p>
+<script>
+    const userHeight = document.querySelector('#height')
+    const userWeight = document.querySelector('#weight')
+    const normal = document.querySelector('#normal')
+    const userWeight2 = document.querySelector('#weight2')
+    const resultBtn = document.querySelector('#result')
+    console.log(userHeight, userWeight, userWeight2, normal, resultBtn) //input은 value로 input 외 innerHTML
+    // 결과 버튼 클릭 시
+    resultBtn.addEventListener('click', function(){
+        //1. 사용자가 입력한 키와 몸무게 정보 받아오기
+        let userH = Number(userHeight.value) // str > number
+        let userW = Number(userWeight.value)
+        console.log(userH, userW)
+        let normal_w = (userH-100)*0.9 //적정체중 저장 변수
+        console.log(normal_w)
+        normal.value = normal_w + 'kg' //목표몸무게 칸 변수 삽입
+        let resultW = userW-normal_w //몸무게 변환변수-평균무게변수
+        console.log(resultW)
+        userWeight2.value = resultW + 'kg'
+    })
+        
+</script>
 </body>
 </html>
