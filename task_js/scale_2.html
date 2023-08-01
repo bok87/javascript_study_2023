@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>적정체중</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>적정 체중 계산기</h1>
+    <p>키<input type="text" id="height"></p>
+    <p>몸무게<input type="text" id="weight"></p>
+    <button type="button" id="result">결과보기</button>
+    <p>적정체중<input type="text" id="normal" readonly></p>
+    <p>감량체중<input type="text" id="weight2" readonly></p>
+    <script>
+        const userHeight = document.querySelector('#height')
+        const userWeight = document.querySelector('#weight')
+        const resultBtn = document.querySelector('#result')
+        const normal = document.querySelector('#normal')
+        const weight2 = document.querySelector('#weight2')
+        console.log(userHeight, userWeight, resultBtn, normal, weight2)
+        result.addEventListener('click',function(){
+            let userH = Number(userHeight.value)
+            let userW = Number(userWeight.value)
+            console.log(userH, userW)
+            let normal_w= (userH-100)*0.9
+            console.log(normal_w)
+            normal.value = normal_w + 'kg' 
+            let resultW = userW - normal_w 
+            console.log(resultW)
+            weight2.value = resultW + 'kg'
+        })
+    </script>
+</body>
+</html>
