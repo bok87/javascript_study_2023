@@ -14,5 +14,39 @@
     <p style="margin-top:50px;">총 수량 <span id="number">0</span>개</p>
     <p>총 가격 <span id="result">0</span>원</p>
     <p><button type="button" id="reset">X</button></p>
+    <!-- script 작성순서 -->
+    <!-- 
+        1. 주문하기 버튼 1번 클릭할때마다 수량 증가하기
+        2. 수량에 따른 가격 출력하기 (1잔당 4800원)
+        3. X버튼 클릭 시 모든 수량, 가격 0을 초기화하기
+    -->
+    <script>
+        const orderBtn = document.querySelector('#order') //주문하기
+        const number = document.querySelector('#number') //수량
+        const result = document.querySelector('#result') //가격
+        const resetBtn = document.querySelector('#reset') //초기화버튼
+        let num = 0 //수량 데이터변수
+        let price = 4800 //가격 데이터변수
+        let total = 0 //최종가격
+        console.log(orderBtn, number, result, resetBtn)
+        //1-1 주문하기 버튼 1번 클릭할때마다 
+        orderBtn.addEventListener('click',function(){
+        //1-2 수량 증가하기
+            // number.innerHTML=number++
+            num++ //수량 데이터 변수 1증가
+            number.innerHTML = num //수량표시변수에 데이터대입
+        //2. 수량에 따른 가격 출력하기 (1잔당 4800원)
+        // result.innerHTML = num*price.toLocaleString('ko-kr') X
+            total = price*num
+            result.innerHTML =total.toLocaleString('ko-kr')
+        })
+        //3. X버튼 클릭 시 모든 수량, 가격 0을 초기화하기
+        resetBtn.addEventListener('click',function(){
+            num=0
+            number.innerHTML = num
+            result.innerHTML = num*price
+            //result.innerHTML = 0
+        })
+    </script>
 </body>
 </html>

@@ -43,5 +43,50 @@
             </fieldset>
         </form>
     </div>
+    <script>
+        //네이버 로그인 조건
+        /* 
+            1. 아이디 안적고 비밀번호 적은 후 로그인버튼 클릭 시 = 아이디 오류 
+            2. 아이디 적고 비밀번호 안적은 후 로그인버튼 클릭 시 = 비밀번호 오류 
+            3. 아이디, 비밀번호 모두 안적고 로그인버튼 클릭 시 = 아이디, 비밀번호 입력하세요 메시지 
+            4. 아이디, 비밀번호 모두 입력하고 로그인 버튼 클릭 시 = 로그인 성공 
+        */        
+        const userId =document.querySelector('#user_id')
+        const userPw =document.querySelector('#user_pw')
+        const error =document.querySelector('#error_result')
+        const loginBtn =document.querySelector('#login_btn')
+        console.log(userId, userPw, error, loginBtn)
+        loginBtn.addEventListener('click',function(){
+            if(userId.value==='' && userPw.value===''){
+                window.alert('아이디, 비밀번호를 입력하세요')
+            }else if(userId.value===''){
+                error.innerHTML='아이디 오류'
+            }else if(userPw.value===''){
+                error.innerHTML='비밀번호 오류'
+            }else{
+                error.innerHTML='로그인성공'  
+            }
+        })
+        //아이디 안적고 로그인 누를 시 '아이디를 입력하세요' 출력
+        /* loginBtn.addEventListener('click',function(){
+            if(userId.value===''){
+                error.innerHTML='아이디를 입력하세요'         
+            }
+            if(userPw.value === ''){
+                error.innerHTML='비밀번호를 입력하세요'
+            }
+        }) */
+        /* loginBtn.addEventListener('click',function(){
+            if(userId.value==='admin' && userPw.value==='a1234'){
+                error.innerHTML='로그인성공'            
+            }else if(userId.value==='' && userPw.value===''){
+                window.alert('아이디, 비밀번호를 입력하세요')
+            }else if(userId.value===''){
+                error.innerHTML='아이디 오류'
+            }else if(userPw.value===''){
+                error.innerHTML='비밀번호 오류'
+            }
+        }) */
+    </script>
 </body>
 </html>
