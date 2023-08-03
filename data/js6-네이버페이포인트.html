@@ -58,7 +58,23 @@
     <script>
         const userPoint = document.querySelector('#user_point')
         const usePoint = document.querySelector('#use_point')
+        const pointReset = document.querySelector('#point_reset')
         const pointAllBtn = document.querySelector('#point_all_btn')
+        let point =1000
+        let total =0
+        console.log(user_point, use_point, point_reset, point_all_btn, point)
+        // // userPoint.value=userPoint += point
+        // total = userPoint+point 
+        // userPoint.innerHTML = total
+        userPoint.value = 1000
+        pointAllBtn.addEventListener('click', function(){
+            userPoint.value = 0
+            usePoint.value = 1000
+        })
+        pointReset.addEventListener('click',function(){
+            usePoint.value = 0
+            userPoint.value = 1000
+        })
     </script>
 </body>
 </html>
