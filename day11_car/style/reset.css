@@ -1,0 +1,43 @@
+
+
+
+
+/* 로컬글꼴 연결법 */
+/* 웹글꼴 연결법 
+    구글폰트접속->글꼴선택->link or import 글꼴 주소가져오기 ->font-family글꼴연결*/
+
+
+html,body,
+h1,h2,h3,h4,h5,h6,p,blockquote,address, /*블록*/
+em,span,strong,q,sub,sup,del,s,a,img, /*인라인*/
+div,header,nav,aside,main,footer,article,figure,figcaption,section,video, /* */
+table,thead,tbody,tfoot,tr,th,td, /*테이블관련*/
+form,fieldset,legend,input,select,option,button,label,textarea, /*폼관련*/
+ul,ol,li,dl,dt,dd /*목록*/ {
+        /* 웹사이트 메인글꼴 작성위치 */
+    margin:0; padding:0; line-height:1.0; font-size:16px; font-style:normal; 
+    font-weight:normal; text-decoration:none;
+}
+table,tr,th, td {border-collapse:collapse;}
+ul,ol,li {list-style:none;}
+a {color:black}
+input{outline:none; border:0;}
+button {cursor:pointer; border:0;}
+fieldset {border:0;}
+/* HTML태그에선 의미적으로 존재하나 CSS디자인결과에서 숨겨지는 대상태그에 적용하는 공통클래스 skip */
+.skip {display:none;}
+
+
+
+/* table, table * {border:2px solid black;} */
+
+
+/*         table, th, td {border:2px solid black;border-collapse: collapse;}
+        tr, th, td {padding:10px;} */
+        /* #t, tr, th, td {border:2px solid black;border-collapse: collapse;} */
+
+
+/* 글자 말줌임 CSS
+overflow:hidden; 
+white-space:nowrap;
+text-overflow:ellipsis; */
