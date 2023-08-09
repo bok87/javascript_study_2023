@@ -1,21 +1,11 @@
-main {
-    width: 1200px; margin: 0 auto;
-}
+main {width: 1200px; margin: 0 auto;}
 /* 공통 제목 CSS */
-main section {
-    text-align: center;
-
-}
-main section .category {
+main section {text-align: center;}
+main section .category {text-transform: uppercase;}
+main section .category::after {
     display: block; content:'';
     background: #aaa; height: 2px; width: 20px;
     margin:20px auto 0;
-    text-transform: uppercase;
-    
-}
-main section .category::after {
-    /* display: flex;
-    padding: 50px; */
 }
 main section h1 {
     font-size: 1.5rem; letter-spacing: -0.02rem;
@@ -31,6 +21,7 @@ main #video .tab_title {}
 main #video .tab_title a {
     padding: 20px 30px; display: inline-block;
 }
+/* 탭 제목 활성화 디자인 + js class 호출용 */
 main #video .tab_title a.active {
     /* background: aqua; */
     border-bottom: 5px solid #189bfa;
@@ -48,16 +39,9 @@ main #video .tab_contents .tab_c1 video {
     width: 80%; margin:0 auto;
 }
 main #video .tab_contents .tab_c2 {}
-main #video .tab_contents .tab_c2 img {
-    width: 80%; margin:0 auto;
-}
+main #video .tab_contents .tab_c2 img {width: 80%; margin:0 auto;}
 main #video .tab_contents .active {}
-/* 자주 사용하는 메뉴 */
-main #menu {}
-main #menu .category {}
-main #menu h1 {}
-main #menu .contents {}
-/* menu tab */
+/* 자주 사용하는 메뉴 - 탭 제목 */
 main #menu .tab_title {
     display: flex;
     justify-content: center;
@@ -70,6 +54,7 @@ main #menu .tab_title a {
     border-bottom: 1px solid #888;
 }
 main #menu .tab_title a:last-child {margin:0 auto;}
+/* 탭 제목 활성화 디자인 + js class 호출용 */
 main #menu .tab_title a.active {
     border:1px solid #888;
     border-bottom: 1px solid #fff ;

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link href="/style/reset.css" rel="stylesheet"></link> 
-    <link href="/style/day11_car.css" rel="stylesheet"></link> 
+    <link href="./style/reset.css" rel="stylesheet"></link> 
+    <link href="./style/day11_car.css" rel="stylesheet"></link> 
     <title>Document</title>
 </head>
 <body>
@@ -23,11 +23,11 @@
             </div>
             <div class="tab_contents">
                 <div class="tab_c1 active">
-                    <video src="/video/carhistory.mp4" autoplay muted loop></video>
-                    <img src="/images/video.png" alt="">
+                    <video src="./video/carhistory.mp4" autoplay muted loop></video>
+                    <img src="./images/video.png" alt="">
                 </div>
                 <div class="tab_c2">
-                    <img src="/images/hero-bg-md-01.gif" alt="">
+                    <img src="./images/hero-bg-md-01.gif" alt="">
                 </div>
             </div>
         </section>
@@ -46,7 +46,7 @@
                 <div class="tab_c1">
                     <div class="left">
                         <h2>사고이력조회></h2>
-                        <p><img src="/images/car-new.png" alt=""></p>
+                        <p><img src="./images/car-new.png" alt=""></p>
                         <p>관련메뉴<br>
                             -조회가 원활하게 안되시나요?
                             <a href="#">고객문의 바로가기&gt;</a>
@@ -56,7 +56,7 @@
                         <h3>왜 사고이력조회가 필수인가?</h3>
                         <ul>
                             <li>
-                                <p><img src="/images/menu-1-1.png" alt=""></p>
+                                <p><img src="./images/menu-1-1.png" alt=""></p>
                                 <div class="contents">
                                     <p class="num">01</p>
                                     <p class="con">
@@ -66,7 +66,7 @@
                                 </div>
                             </li>
                             <li>
-                                <p><img src="/images/menu-1-2.png" alt=""></p>
+                                <p><img src="./images/menu-1-2.png" alt=""></p>
                                 <div class="contents">
                                     <p class="num">02</p>
                                     <p class="con">
@@ -75,7 +75,7 @@
                                 </div>
                             </li>
                             <li>
-                                <p><img src="/images/menu-1-3.png" alt=""></p>
+                                <p><img src="./images/menu-1-3.png" alt=""></p>
                                 <div class="contents">
                                     <p class="num">03</p>
                                     <p class="con">
@@ -147,6 +147,13 @@
         videoTabTitle.forEach(function(target, index, array){
             target.addEventListener('click',function(e){
                 e.preventDefault() //클릭시 새로고침되는거 막기
+                //8/9 추가 class active 호출용
+                //DOM.classList.add('적용클래스명')
+                //DOM.classList.remove('제거클래스명')
+                //remove 모두 제거
+                for(let i of videoTabTitle){i.classList.remove('active')}
+                //개별 target add class 적용
+                target.classList.add('active')
                 //클릭 이벤트 안에서는 이벤트대상의 인덱스만 인식한다.
                 // console.log(target)
                 console.log(index)
@@ -208,6 +215,8 @@
         menuTabTitle.forEach(function(t,i,a){
             t.addEventListener('click', function(e){
                 e.preventDefault()
+                for(let i of menuTabTitle){i.classList.remove('active');}
+                t.classList.add('active')
                 for(let i of menuTabContent){i.style.display='none'}
                 menuTabContent[i].style.display='flex'
             })
